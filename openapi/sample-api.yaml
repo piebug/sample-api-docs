@@ -2,7 +2,7 @@ swagger: '2.0'  # Purposefully testing OpenAPI 2.0
 info:
   title: Test API
   description: This is a fake API specification used to test generating and hosting docs using Redocly and GitHub Pages, respectively. 
-               Validated using https://apitools.dev/swagger-parser/online/
+               Validated using https://apitools.dev/swagger-parser/online/. Also **BUTTS**
   version: 0.0.1
 basePath: /test
 schemes:
