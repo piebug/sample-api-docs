@@ -1,13 +1,19 @@
 {
   "name": "sample-api",
   "version": "1.0.0",
+  "homepage": "http://pies-n-loaf.github.io/sample-api-docs",
   "dependencies": {
     "@redocly/openapi-cli": "^1.0.0-beta.32"
   },
   "private": true,
   "scripts": {
     "start": "openapi preview-docs",
-    "build": "openapi bundle -o dist",
-    "test": "openapi lint"
+    "build": "openapi bundle -o redoc/dist",
+    "test": "openapi lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d redoc"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }
