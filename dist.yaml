@@ -4,7 +4,7 @@ info:
   description: >-
     This is a fake API specification used to test generating and hosting docs
     using Redocly and GitHub Pages, respectively. Validated using
-    https://apitools.dev/swagger-parser/online/. Also **BUTTS**
+    https://apitools.dev/swagger-parser/online/. Also **BUTTS**. _Cupcakes._
   version: 0.0.1
 basePath: /test
 schemes:
