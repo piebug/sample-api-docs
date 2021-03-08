@@ -1,7 +1,7 @@
 # Sample API Documentation
 > by sandy for sandy's own needs.
 
-[ TODO BADGES ]
+[![Deploy sample API docs](https://github.com/pies-n-loaf/sample-api-docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/pies-n-loaf/sample-api-docs/actions/workflows/deploy.yml)
 
 API documentation is the eyes that are the windows of the soul. That's to say, they are a crucially important part of ensuring your API is useful and usable. 
 
@@ -18,6 +18,36 @@ This repo's purpose is to provide an extensible and broadly applicable example f
 * **Must be automatically regenerated and redeployed whenever the default branch is updated.** The deployed documentation should always be up-to-date, but no one should have to remember to do this.
 
 . . .
+
+- why this repo
+  - define the problem needing to be solved (incl. being able to automatically deploy changes into a minimal branch, custom name, etc)
+  - tools (openapi, redocly, github pages)
+
+  - what is openapi
+    - EXTREMELY brief blurb
+    - link to reference docs
+
+  - what is redoc/redocly
+    - less brief blurb
+    - navigating free/premium features (fuck this shit)
+    - links
+
+  - what is github pages
+    - normal brief blurb
+
+- how to view (gh pages link)
+  - complex API version, with references, code examples, etc
+  - simplest API definition
+    - why openapi 2.0 (if anything it'll be easier in 3)
+
+- how to do this yourself
+  - STEP BY STEP
+
+- contributing (lol don't)
+
+- license (mit dunno why)
+
+---
 
 ## Working on your OpenAPI Definition
 
