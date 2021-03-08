@@ -4,8 +4,8 @@ on:
   push:
     branches: [ main ]
 
-  # TODO: do I need this?
-  # workflow_dispatch:
+  # enables manual runs
+  workflow_dispatch:
 
 jobs:
   deploy:
