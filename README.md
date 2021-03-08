@@ -1,4 +1,23 @@
-# Sample API OpenAPI Definition
+# Sample API Documentation
+> by sandy for sandy's own needs.
+
+[ TODO BADGES ]
+
+API documentation is the eyes that are the windows of the soul. That's to say, they are a crucially important part of ensuring your API is useful and usable. 
+
+This repo's purpose is to provide an extensible and broadly applicable example for how to generate, customize, and deploy API documentation in as few steps as possible. Additionally, this solution has to work within the following constraints:
+
+* **Must be compatible with OpenAPI 2.0 specifications.** _(That's what I gotta use at work, and I wanna make that bread.)_
+
+* **Must be free.** _(I wanna make that bread, not spend that bread.)_
+
+* **Must be generated using the base API definition.** Docs should be seamlessly updated with development, as opposed to being a discrete maintenance burden. 
+
+* **Must be easily customizable.** _(I want custom branding! Themes! Fonts!)_
+
+* **Must be automatically regenerated and redeployed whenever the default branch is updated.** The deployed documentation should always be up-to-date, but no one should have to remember to do this.
+
+. . .
 
 ## Working on your OpenAPI Definition
 
