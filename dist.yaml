@@ -1,0 +1,322 @@
+swagger: '2.0'
+info:
+  title: Test API
+  description: >-
+    This is a fake API specification used to test generating and hosting docs
+    using Redocly and GitHub Pages, respectively. Validated using
+    https://apitools.dev/swagger-parser/online/. Also **BUTTS**
+  version: 0.0.1
+basePath: /test
+schemes:
+  - http
+paths:
+  /apples:
+    get:
+      summary: Get a list of apples.
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Apple'
+  /apple-trees:
+    get:
+      summary: Get a list of apple trees.
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AppleTrees'
+  '/apple-trees/{appleTreeID}':
+    parameters:
+      - in: path
+        name: appleTreeID
+        type: string
+        required: true
+    get:
+      summary: Get a specific apple tree.
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AppleTree'
+        '404':
+          description: Couldn't find the apple tree.
+    delete:
+      summary: Delete a specific apple tree.
+      responses:
+        '200':
+          description: OK
+  /apple-wine-pairings:
+    get:
+      summary: Get a list of apples and their recommended wine pairings.
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                apple:
+                  $ref: '#/definitions/Apple'
+                wine:
+                  type: string
+  /farmers:
+    post:
+      summary: Create an apple farmer.
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/Farmer'
+      responses:
+        '201':
+          description: OK
+          schema:
+            $ref: '#/definitions/Farmer'
+  '/farmers/{farmerID}':
+    put:
+      summary: Update a farmer.
+      parameters:
+        - in: path
+          name: farmerID
+          type: string
+          required: true
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/Farmer'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Farmer'
+        '422':
+          $ref: '#/responses/InvalidInput'
+  /orchards:
+    post:
+      summary: Create an orchard of fruit trees.
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/Orchard'
+      responses:
+        '201':
+          description: OK
+          schema:
+            $ref: '#/definitions/Orchard'
+  '/orchards/{orchardID}':
+    patch:
+      summary: Plant a tree in an orchard.
+      parameters:
+        - in: path
+          name: orchardID
+          type: string
+          required: true
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/Tree'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Orchard'
+        '400':
+          $ref: '#/responses/BadRequest'
+definitions:
+  Address:
+    type: object
+    properties:
+      streetAddress1:
+        type: string
+      streetAddress2:
+        type: string
+      city:
+        type: string
+      state:
+        type: string
+      postalCode:
+        type: string
+        format: zip
+        pattern: '^(\d{5}([\-]\d{4})?)$'
+      country:
+        type: string
+        default: USA
+    required:
+      - streetAddress1
+      - city
+      - state
+      - postalCode
+  Apple:
+    type: string
+    enum:
+      - Granny Smith
+      - Red Delicious
+      - Pink Lady
+      - Braeburn
+      - Fuji
+      - Honeycrisp
+  AppleTree:
+    allOf:
+      - $ref: '#/definitions/Tree'
+      - type: object
+        properties:
+          apples:
+            type: array
+            items:
+              $ref: '#/definitions/Apple'
+        required:
+          - apples
+  AppleTrees:
+    type: array
+    items:
+      $ref: '#/definitions/AppleTree'
+  CherryTree:
+    allOf:
+      - $ref: '#/definitions/Tree'
+      - type: object
+        properties:
+          cherryBunchSize:
+            type: integer
+            minimum: 1
+            maximum: 3
+            default: 2
+          cherryTaste:
+            type: string
+            enum:
+              - sweet
+              - sour
+  Error:
+    type: object
+    properties:
+      message:
+        type: string
+  Farmer:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+        readOnly: true
+      firstName:
+        type: string
+      lastName:
+        type: string
+      email:
+        type: string
+        format: email
+      phone:
+        type: string
+        format: telephone
+        pattern: '^[2-9]\d{2}-\d{3}-\d{4}$'
+      favoriteDateTime:
+        type: string
+        format: date-time
+      likesApples:
+        type: boolean
+    required:
+      - firstName
+  LemonTree:
+    allOf:
+      - $ref: '#/definitions/Tree'
+      - type: object
+        properties:
+          goodForLemonade:
+            type: boolean
+  Orchard:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+        readOnly: true
+      address:
+        $ref: '#/definitions/Address'
+      farmer:
+        $ref: '#/definitions/Farmer'
+      trees:
+        type: array
+        items:
+          $ref: '#/definitions/Tree'
+        minItems: 1
+        maxItems: 30
+  PeachTree:
+    allOf:
+      - $ref: '#/definitions/Tree'
+      - type: object
+        properties:
+          peaches:
+            type: array
+            items:
+              type: string
+              enum:
+                - Donut
+                - Not Donut
+        required:
+          - peaches
+  Tree:
+    type: object
+    discriminator: treeType
+    properties:
+      id:
+        type: string
+        format: uuid
+        readOnly: true
+      datePlanted:
+        type: string
+        format: date
+      timeMilitaryPlanted:
+        type: string
+        pattern: '\d{4}Z'
+      treeType:
+        type: string
+        enum:
+          - AppleTree
+          - CherryTree
+          - LemonTree
+          - PeachTree
+  Upload:
+    type: object
+    properties:
+      bytes:
+        type: integer
+      contentType:
+        type: string
+        format: mime-type
+        example: application/pdf
+      filename:
+        example: filename.pdf
+        type: string
+    required:
+      - filename
+      - contentType
+      - bytes
+  ValidationError:
+    allOf:
+      - $ref: '#/definitions/Error'
+      - type: object
+        properties:
+          invalidFields:
+            type: object
+            additionalProperties:
+              description: List of errors for the field
+              type: array
+              items:
+                type: string
+        required:
+          - invalidFields
+responses:
+  BadRequest:
+    description: The request was bad.
+  InvalidInput:
+    description: The input was invalid.
+    schema:
+      $ref: '#/definitions/ValidationError'
