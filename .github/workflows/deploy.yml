@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
   # TODO: do I need this?
-  workflow_dispatch:
+  # workflow_dispatch:
 
 jobs:
   deploy:
