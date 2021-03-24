@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "start": "openapi preview-docs",
-    "build": "openapi bundle -o redoc/dist",
+    "build": "openapi bundle -o redoc/",
     "test": "openapi lint",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d redoc"
