@@ -1,9 +1,9 @@
 swagger: '2.0'  # Purposefully testing OpenAPI 2.0
 info:
   title: Test API
-  description: This is a fake API specification used to test generating and hosting docs using Redocly and GitHub Pages, respectively. 
-               Validated using https://apitools.dev/swagger-parser/online/. Also **BUTTS**. _Cupcakes._ 
-               [Trying link to closet](/closet.html), [and fancy](/fancy.html)
+  description: >
+  It's dark in here. It's a closet.This is a fake API specification used to test generating and hosting docs using Redocly and GitHub Pages, respectively. 
+               Validated using https://apitools.dev/swagger-parser/online/. Also **BUTTS**. _Cupcakes._
   version: 0.0.1
 basePath: /test
 schemes:
