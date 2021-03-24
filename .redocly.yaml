@@ -1,6 +1,8 @@
 # See https://redoc.ly/docs/cli/configuration/ for more information.
 apiDefinitions:
-  main: openapi/sample-api.yaml
+  sample: openapi/sample-api.yaml
+  closet: openapi/closet.yaml
+  fancy: openapi/fancy.yaml  # openapi v3
 lint:
   extends:
     - recommended
