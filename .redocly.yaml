@@ -2,7 +2,7 @@
 apiDefinitions:
   sample: openapi/sample-api.yaml
   closet: openapi/closet.yaml
-  fancy: openapi/fancy.yaml  # openapi v3
+  # fancy: openapi/fancy.yaml  # openapi v3
 lint:
   extends:
     - recommended
