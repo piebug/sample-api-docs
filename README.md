@@ -47,6 +47,8 @@ This repo's purpose is to provide an extensible and broadly applicable example f
 
 - license (mit dunno why)
 
+- TODO: recompile bundled api files on merge to main _in_ main?
+
 ---
 
 ## Working on your OpenAPI Definition
