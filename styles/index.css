@@ -7,12 +7,18 @@ body {
 }
 
 h1 {
+  font-size: 2em !important;
+  font-weight: 600 !important;
+}
+
+.api-info h1 {
+  /* this is the title heading, so we're gonna make it pop a little more */
   font-size: 3em !important;
   font-weight: 700 !important;
 }
 
 h2 {
-  font-size: 2.5em !important;
+  font-size: 2em !important;
   color: #FAA945 !important;
 }
 
@@ -54,4 +60,8 @@ li.react-tabs__tab--selected {
   border-radius: 2px;
   font-weight: bold;
   color: #f5b83d;
+}
+
+.larger {
+  font-size: 16px !important;
 }
