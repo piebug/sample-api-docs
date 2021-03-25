@@ -19,7 +19,7 @@ info:
     Validated using https://apitools.dev/swagger-parser/online/. Also **BUTTS**.
     _Cupcakes._ 
 
-    [Trying link to closet](/closet.html), [and fancy](/fancy.html). 
+    [Trying link to closet](closet.html), [and fancy](/fancy.html). 
 
     `test the code` and
 
@@ -29,9 +29,15 @@ info:
     const newVar = 20;
 
     ```
-basePath: /test
+externalDocs:
+  description: Read more about why this API specification exists and how to make your own.
+  url: 'https://github.com/pies-n-loaf/sample-api-docs#sample-api-documentation'
 schemes:
   - http
+basePath: /pumpkin
+security:
+  - SecretApiKey: []
+  - JWT: []
 paths:
   /apples:
     get:
