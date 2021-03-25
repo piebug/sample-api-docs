@@ -1,7 +1,7 @@
 {
   "name": "sample-api",
   "version": "1.0.0",
-  "homepage": "http://pies-n-loaf.github.io/sample-api-docs",
+  "homepage": "https://pies-n-loaf.github.io/sample-api-docs",
   "dependencies": {
     "@redocly/openapi-cli": "^1.0.0-beta.32"
   },
