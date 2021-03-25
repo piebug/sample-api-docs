@@ -9,8 +9,5 @@ lint:
   rules:
     no-unused-components: warning
 referenceDocs:
-  htmlTemplate: ./redoc/index.html
-  theme:
-    colors:
-      primary:
-        main: "#32329f"
+  htmlTemplate: redoc/index.html
+  # theme NOTE: modifying the theme here doesn't work - using Redoc.init for standalone instead
