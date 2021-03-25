@@ -65,6 +65,9 @@ paths:
     $ref: 'paths\users@{username}.yaml'
   /echo:
     $ref: paths\echo.yaml
+security:
+  - SecretApiKey: []
+  - JWT: []
 components:
   securitySchemes:
     main_auth:
