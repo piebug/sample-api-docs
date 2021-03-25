@@ -14,15 +14,33 @@ info:
   description: |
     This is a fake API specification used to test generating and hosting docs using Redocly and GitHub Pages, respectively. 
     Validated using https://apitools.dev/swagger-parser/online/. Also **BUTTS**. _Cupcakes._ 
-    [Trying link to closet](/closet.html), [and fancy](/fancy.html). 
+    [Trying link to closet](closet.html), [and fancy](/fancy.html). 
     `test the code` and
 
     ```json
     const newVar = 20;
     ```
-basePath: /test
+externalDocs:
+  description: Read more about why this API specification exists and how to make your own.
+  url: 'https://github.com/pies-n-loaf/sample-api-docs#sample-api-documentation'
 schemes:
   - http
+basePath: /pumpkin
+# tags:
+#   - name: Echo
+#     description: Example echo operations
+#   - name: User
+#     description: Operations about user
+# x-tagGroups:
+#   - name: Endpoints
+#     tags:
+#     - moveTaskOrder
+#     - mtoShipment
+#     - paymentRequest
+#     - mtoServiceItem
+security:
+  - SecretApiKey: []
+  - JWT: []
 paths:
   /apples:
     get:
