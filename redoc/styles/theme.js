@@ -37,12 +37,8 @@ const RedocTheme = {
       backgroundColor: '#fef8ec',
       textColor: '#33241F',
     },
-            // color: '#1EA896',
         // hover: '#E6AACE',
         // hover: '#DF90BF',
         // hover: '#D671AD',
-                // color: '#8E44AD',
-        // hover: '#9B59B6',
-        // color: '#5B21B6',
   }
 };
