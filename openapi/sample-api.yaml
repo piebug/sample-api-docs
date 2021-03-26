@@ -10,7 +10,7 @@ info:
     name: MIT
     url: 'https://github.com/pies-n-loaf/sample-api-docs/blob/main/LICENSE'
   x-logo:
-    url: 'https://raw.githubusercontent.com/pies-n-loaf/sample-api-docs/main/redoc/icons/pumpkin-api-logo.png'
+    url: 'icons/pumpkin-api-logo.png'
   description:
     $ref: 'description.md'
 externalDocs:
@@ -18,7 +18,7 @@ externalDocs:
   url: 'https://github.com/pies-n-loaf/sample-api-docs#sample-api-documentation'
 schemes:
   - http
-basePath: /pumpkin
+basePath: /apie
 # tags:
 #   - name: Echo
 #     description: Example echo operations
