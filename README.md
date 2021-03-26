@@ -3,7 +3,7 @@
 
 [![Deploy sample API docs](https://github.com/pies-n-loaf/sample-api-docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/pies-n-loaf/sample-api-docs/actions/workflows/deploy.yml)
 
-API documentation is the eyes that are the windows of the soul. That's to say, they are a crucially important part of ensuring your API is useful and usable. 
+~~API documentation is the eyes that are the windows of the soul.~~ API documentation is a crucially important part of ensuring your API is useful and usable. Every time a developer finds exactly what they need in an API's reference, a puppy gets adopted. 
 
 This repo's purpose is to provide an extensible and broadly applicable example for how to generate, customize, and deploy API documentation in as few steps as possible. Additionally, this solution has to work within the following constraints:
 
@@ -11,11 +11,16 @@ This repo's purpose is to provide an extensible and broadly applicable example f
 
 * **Must be free.** _(I wanna make that bread, not spend that bread.)_
 
-* **Must be generated using the base API definition.** Docs should be seamlessly updated with development, as opposed to being a discrete maintenance burden. 
+* **Must be generated using the base API definition.** Docs should be seamlessly updated with development, as opposed to being an additional maintenance burden. 
 
 * **Must be easily customizable.** _(I want custom branding! Themes! Fonts!)_
 
 * **Must be automatically regenerated and redeployed whenever the default branch is updated.** The deployed documentation should always be up-to-date, but no one should have to remember to do this.
+
+To this end...
+
+ASIDE:
+For work, I have a number of other, extremely specific requirements to keep in mind. Most of these were secondary to the pursuit of the simplest way to deploy API docs, but one of them requires me to validate the fully compiled spec to ensure that a third party app can still use it. I have been using the online [Swagger Parser](https://apitools.dev/swagger-parser/online/) to check this.
 
 . . .
 
