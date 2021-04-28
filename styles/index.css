@@ -46,6 +46,14 @@ code {
   text-shadow: none !important;
 }
 
+mark {
+  background-color: #ffd57b7c;
+  padding: 4px;
+  font-weight: bold;
+  font-style: italic;
+  color: #1EA896;
+}
+
 li.react-tabs__tab--selected {
   background-color: #fef8ec !important;
 }
@@ -64,4 +72,9 @@ li.react-tabs__tab--selected {
 
 .larger {
   font-size: 16px !important;
+}
+
+.inline-icon {
+  margin-bottom: -4px;
+  padding: 0 2px;
 }
